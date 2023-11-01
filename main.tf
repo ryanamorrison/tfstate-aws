@@ -34,3 +34,13 @@ resource "aws_dynamodb_table" "terraform_locks" {
   }
 }
 
+#remote backend
+terraform {
+  backend "s3" {
+    bucket = "vas-tfstate-aws"
+    key = "global/s3/terraform.tfstate"
+    region = "us-west-2"
+    dynamodb_table = "tfstate-locking"
+    encrypt = true
+  }
+}

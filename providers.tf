@@ -1,4 +1,4 @@
 provider "aws" {
-  //oregon
+  #oregon
   region = "us-west-2"
 }
